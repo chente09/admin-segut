@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UsersService } from '../../services/users/users.service';
+import { RegistersService } from '../../services/registers/registers.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -13,6 +14,7 @@ import { CommonModule } from '@angular/common';
 export class AdminComponent {
   constructor(
     public usersService: UsersService,
+    public registersService: RegistersService,
     private route: ActivatedRoute, 
     private router: Router
   ) { }
@@ -31,8 +33,15 @@ export class AdminComponent {
 
   // Cierra la sesión y redirige a la página principal
   logout(): void {
+    // Limpiar la sesión en el servicio
+    this.registersService.currentRegister = undefined;
     this.usersService.logout();
-    this.router.navigate(['/home']);
+  
+    // Redirigir al usuario a la página de inicio o de login
+    this.router.navigate(['/admin']).then(() => {
+      // Forzar la recarga de la página
+      window.location.reload();
+    });
   }
 
   // Métodos para navegar a las rutas de administración

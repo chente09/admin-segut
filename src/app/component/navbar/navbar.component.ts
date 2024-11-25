@@ -4,6 +4,7 @@ import { Path } from '../../utils/path';
 import { CommonModule } from '@angular/common';
 import { ImagesService, ImageData } from '../../services/imagenes/images.service';
 import { UsersService } from '../../services/users/users.service';
+import { RegistersService } from '../../services/registers/registers.service';
 import {Router } from '@angular/router';
 
 @Component({
@@ -39,6 +40,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     private router: Router,
     private usersService: UsersService,
+    private registersService: RegistersService,
     private imagesService: ImagesService,
   ) {}
 
@@ -61,7 +63,14 @@ export class NavbarComponent implements OnInit {
   }
 
   logout(): void {
+    // Limpiar la sesión en el servicio
+    this.registersService.currentRegister = undefined;
     this.usersService.logout();
-    this.router.navigate(['/admin']);
+  
+    // Redirigir al usuario a la página de inicio o de login
+    this.router.navigate(['/admin']).then(() => {
+      // Forzar la recarga de la página
+      window.location.reload();
+    });
   }
 }

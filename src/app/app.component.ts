@@ -60,8 +60,14 @@ export class AppComponent {
   }
 
   logout(): void {
+    // Limpiar la sesión en el servicio
     this.registersService.currentRegister = undefined;
     this.usersService.logout();
-    this.router.navigate(['/admin']);
+  
+    // Redirigir al usuario a la página de inicio o de login
+    this.router.navigate(['/admin']).then(() => {
+      // Forzar la recarga de la página
+      window.location.reload();
+    });
   }
 }
