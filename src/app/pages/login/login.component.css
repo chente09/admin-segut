@@ -1,0 +1,79 @@
+.welcome-container {
+    background: linear-gradient(135deg, #073c6f 40%, #8bb349);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+}
+
+.login-card h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-form {
+    margin-top: 20px;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.login-form-forgot {
+    color: #007bff;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.login-form-forgot:hover {
+    text-decoration: underline;
+}
+
+.login-form-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    display: flex; /* Activa Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    text-align: center; /* Asegura que el texto esté centrado */
+    cursor: pointer; /* Muestra un puntero al pasar sobre el botón */
+}
+.google-btn {
+    background-color: #db4437;
+    color: #fff;
+    border: none;
+}
+
+.google-btn:hover {
+    background-color: #c23321;
+}
+
+.text-center {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.text-center a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.text-center a:hover {
+    text-decoration: underline;
+}

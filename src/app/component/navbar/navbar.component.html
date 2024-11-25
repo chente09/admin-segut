@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg bg-light shadow-sm py-2 sticky-top">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" routerLink="/admin" routerLinkActive="router-link-active">
+      <img 
+        [src]="logoUrl" 
+        alt="Logo" 
+        class="logo me-2"
+      />
+    </a>
+
+    <!-- Botón para pantallas pequeñas -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+      aria-controls="navbarContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <!-- Links del menú -->
+        <li class="nav-item" *ngFor="let item of menuItems">
+          <a 
+            class="nav-link text-dark fw-bold fs-5" 
+            [routerLink]="item.route" 
+            [routerLinkActive]="'active text-primary'"
+          >
+            <i [class]="'bi ' + item.icon + ' me-1'"></i>
+            {{ item.label }}
+          </a>
+        </li>
+
+        <!-- Botón de login/logout -->
+        <li class="nav-item ms-3">
+          <a class="btn btn-outline-secondary btn-sm" routerLink="/login" *ngIf="!isLogged(); else elseTemplate">
+            <i class="bi bi-person-circle"></i>
+          </a>
+          <ng-template #elseTemplate>
+            <a class="btn btn-outline-danger btn-sm" (click)="logout()">
+              <i class="bi bi-box-arrow-right"></i>
+            </a>
+          </ng-template>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

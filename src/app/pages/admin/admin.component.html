@@ -1,0 +1,25 @@
+<div class="admin-cpanel">
+    <h1>Panel de Administración</h1>
+
+    <!-- Muestra mensaje de bienvenida si el usuario está logueado -->
+    <div *ngIf="isLogged(); else loginPrompt">
+        <p>Bienvenido, Administrador!</p>
+
+        <!-- Botón para cerrar sesión -->
+        <button (click)="logout()">Cerrar Sesión</button>
+
+        <!-- Opciones de navegación en el panel -->
+        <div class="navigation-buttons">
+            <button (click)="goToUsers()">Gestionar Usuarios</button>
+            <button (click)="goToPaths()">Administrar Rutas</button>
+            <button (click)="goToImages()">Administrar Imágenes</button>
+            <button (click)="goToCards()">Administrar Tarjetas</button>
+        </div>
+    </div>
+
+    <!-- Mensaje cuando el usuario no está logueado -->
+    <ng-template #loginPrompt>
+        <p>Por favor, inicia sesión para acceder al panel de administración.</p>
+        <button (click)="goToInit()">Iniciar Sesión</button>
+    </ng-template>
+</div>

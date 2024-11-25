@@ -1,0 +1,65 @@
+<div class="container-fluid text-center mb-5">
+    <!-- Título con botón para agregar un nuevo path -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1>Lista de Paths</h1>
+        <button class="btn btn-success" (click)="showAddForm()">Nuevo Path</button>
+    </div>
+
+    <!-- Formulario de path, visible solo si showForm es true -->
+    <div *ngIf="showForm">
+        <h2>{{ isEditing ? 'Editar Path' : 'Agregar Path' }}</h2>
+
+        <form [formGroup]="form" (ngSubmit)="isEditing ? updatePath() : addPath()">
+            <div class="mb-3">
+                <label for="path" class="form-label">Path (Ruta)</label>
+                <input type="text" class="form-control" id="path" formControlName="path">
+                <div *ngIf="form.get('path')?.invalid && form.get('path')?.touched">
+                    <small>El path es requerido</small>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre del Path</label>
+                <input type="text" class="form-control" id="nombre" formControlName="nombre">
+                <div *ngIf="form.get('nombre')?.invalid && form.get('nombre')?.touched">
+                    <small>El nombre es requerido</small>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <input type="text" class="form-control" id="descripcion" formControlName="descripcion">
+                <div *ngIf="form.get('descripcion')?.invalid && form.get('descripcion')?.touched">
+                    <small>La descripción es requerida</small>
+                </div>
+            </div>
+
+            <!-- Botones de acción -->
+            <button type="submit" class="btn btn-primary">{{ isEditing ? 'Actualizar' : 'Crear' }}</button>
+            <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancelar</button>
+        </form>
+    </div>
+</div>
+
+<hr>
+
+<!-- Lista de paths -->
+<nz-table #editRowTable nzBordered [nzData]="paths" nzTableLayout="fixed">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Ruta</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of editRowTable.data">
+            <td>{{ data.nombre }}</td>
+            <td>{{ data.descripcion }}</td>
+            <td>{{ data.path }}</td>
+            <td>
+                <a class="btn btn-outline-danger" (click)="deletePath(data)">Eliminar</a>
+                <a class="btn btn-outline-warning" (click)="editPath(data)">Editar</a>
+            </td>
+        </tr>
+    </tbody>
+</nz-table>

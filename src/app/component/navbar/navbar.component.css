@@ -1,0 +1,47 @@
+/* Ajustes generales */
+.navbar {
+    z-index: 1000; /* Ajusta el valor si es necesario */
+}
+.logo {
+    height: 90px;
+    max-height: 100px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Espaciado entre los elementos del menú */
+.navbar-nav .nav-item {
+    margin-left: 10px;
+}
+
+/* Hover en los enlaces */
+.nav-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Activo */
+.router-link-active {
+    font-weight: bold;
+    color: #007bff !important;
+}
+
+/* Botón navbar-toggler */
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+}
+
+/* Responsivo: Pantallas pequeñas */
+@media (max-width: 768px) {
+    .logo {
+        height: 50px; /* Tamaño reducido */
+    }
+    .btn {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+    }
+    .navbar-toggler {
+        padding: 5px;
+    }
+}

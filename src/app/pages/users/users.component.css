@@ -1,0 +1,102 @@
+.user-management-container {
+    padding: 20px;
+    background: #f9f9f9;
+    /* Fondo suave para separar del fondo general */
+    border-radius: 8px;
+    /* Bordes redondeados para suavizar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eaeaea;
+    /* Línea separadora para destacar */
+    padding-bottom: 10px;
+}
+
+.table-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.table-header button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #007bff;
+    /* Color primario */
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.table-header button:hover {
+    background: #0056b3;
+    /* Color más oscuro al pasar el ratón */
+}
+
+.nz-table {
+    background: #fff;
+    /* Fondo blanco para la tabla */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    overflow: hidden;
+    /* Elimina bordes cortados */
+}
+
+.nz-table thead {
+    background: #f1f1f1;
+    /* Fondo para el encabezado */
+    font-weight: 600;
+}
+
+.nz-table th {
+    text-align: left;
+    padding: 12px;
+    color: #555;
+    font-size: 1rem;
+}
+
+.nz-table tbody tr {
+    border-bottom: 1px solid #eaeaea;
+    transition: background 0.3s ease;
+}
+
+.nz-table tbody tr:hover {
+    background: #f9f9f9;
+    /* Fondo al pasar el ratón por filas */
+}
+
+.nz-table td {
+    padding: 12px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.nz-select {
+    min-width: 150px;
+}
+
+.nz-button {
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+button[nzDanger] {
+    color: #ff4d4f;
+    /* Color de alerta */
+    font-weight: bold;
+}
+
+button[nzDanger]:hover {
+    color: #d9363e;
+}

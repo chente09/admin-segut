@@ -1,0 +1,37 @@
+<div class="user-management-container">
+    <div class="table-header">
+        <h2>Gestión de Usuarios</h2>
+        <button nz-button [nzType]="'primary'" (click)="onAddUser()">
+            <span nz-icon nzType="user-add" nzTheme="outline"></span> Agregar Nuevo Usuario
+        </button>
+    </div>
+
+    <nz-table #editRowTable nzBordered [nzData]="registers" [nzBordered]="true" nzTableLayout="fixed">
+        <thead>
+            <tr>
+                <th>Nombre de Usuario</th>
+                <th>Correo</th>
+                <th>Celular</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of registers">
+                <td>{{ data.nickname }}</td>
+                <td>{{ data.email }}</td>
+                <td>{{ data.phoneNumber }}</td>
+                <td>
+                    <!-- Selector de roles editable en línea -->
+                    <nz-select [(ngModel)]="data.role" (ngModelChange)="updateRole(data)">
+                        <nz-option nzValue="empleado" nzLabel="empleado"></nz-option>
+                        <nz-option nzValue="admin" nzLabel="admin"></nz-option>
+                    </nz-select>
+                </td>
+                <td>
+                    <button nz-button nzType="link" nzDanger (click)="onDeleteUser(data)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </nz-table>
+</div>

@@ -1,0 +1,65 @@
+<div class="container">
+    <h1>Administrador de Imágenes</h1>
+
+    <div>
+        <h2>Cargar nuevas imágenes</h2>
+        <input type="file" (change)="onFilesSelected($event, 'images')" multiple />
+        <button (click)="uploadFiles('images')">Subir nuevo logo</button>
+
+        <input type="file" (change)="onFilesSelected($event, 'sliders')" multiple />
+        <button (click)="uploadFiles('sliders')">Subir imagenes para el carrusel</button>
+    </div>
+
+    <!-- Sección de ImagesService -->
+    <div>
+        <h2>Logos</h2>
+        <div *ngIf="images.length > 0; else noImages">
+            <div class="image-list">
+                <div *ngFor="let image of images" class="image-card">
+                    <img [src]="image.url" [alt]="image.name" />
+                    <!-- Edición -->
+                    <div *ngIf="editingImageId === image.id; else displayImageName">
+                        <input [(ngModel)]="newName" type="text" placeholder="Nuevo nombre" />
+                        <button (click)="saveImageName(image.id)">Guardar</button>
+                        <button (click)="cancelEditImage()">Cancelar</button>
+                    </div>
+                    <ng-template #displayImageName>
+                        <p>{{ image.name }}</p>
+                        <button (click)="editImageName(image.id, image.name)">Editar</button>
+                        <button (click)="deleteImage(image.id)">Eliminar</button>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de SliderService -->
+    <div>
+        <h2>Carrusel</h2>
+        <div *ngIf="sliders.length > 0; else noSliders">
+            <div class="image-list">
+                <div *ngFor="let slider of sliders" class="image-card">
+                    <img [src]="slider.url" [alt]="slider.name" />
+                    <!-- Edición -->
+                    <div *ngIf="editingSliderId === slider.id; else displaySliderName">
+                        <input [(ngModel)]="newSliderName" type="text" placeholder="Nuevo nombre" />
+                        <button (click)="saveSliderName(slider.id)">Guardar</button>
+                        <button (click)="cancelEditSlider()">Cancelar</button>
+                    </div>
+                    <ng-template #displaySliderName>
+                        <p>{{ slider.name }}</p>
+                        <button (click)="deleteSlider(slider.id)">Eliminar</button>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #noImages>
+        <p>No hay imágenes disponibles.</p>
+    </ng-template>
+
+    <ng-template #noSliders>
+        <p>No hay sliders disponibles.</p>
+    </ng-template>
+</div>

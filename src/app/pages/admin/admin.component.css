@@ -1,0 +1,10 @@
+.admin-cpanel {
+    text-align: center;
+    margin: 2rem;
+}
+
+.navigation-buttons button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}

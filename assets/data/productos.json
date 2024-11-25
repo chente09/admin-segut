@@ -1,0 +1,245 @@
+{
+    "productos": [
+    {
+        "id": 1,
+        "nombre": "Teclado Gaming Xtreme",
+        "descripcion": "Teclado mecánico para juegos con retroiluminación RGB y teclas programables.",
+        "descuento": 0.1,
+        "imagen": "teclado_xtreme.jpg",
+        "valor": 89.99
+      },
+      {
+        "id": 2,
+        "nombre": "Mouse Óptico ProMaster",
+        "descripcion": "Mouse ergonómico de alta precisión para profesionales y gamers.",
+        "descuento": 0.05,
+        "imagen": "mouse_promaster.jpg",
+        "valor": 49.99
+      },
+      {
+        "id": 3,
+        "nombre": "Auriculares Inalámbricos SonicWave",
+        "descripcion": "Auriculares inalámbricos con sonido envolvente y cancelación de ruido.",
+        "descuento": 0.15,
+        "imagen": "auriculares_sonicwave.jpg",
+        "valor": 129.99
+      },
+      {
+        "id": 4,
+        "nombre": "Monitor Curvo Quantum 34 pulgadas",
+        "descripcion": "Monitor curvo de alta resolución para una experiencia visual inmersiva.",
+        "descuento": 0.2,
+        "imagen": "monitor_quantum.jpg",
+        "valor": 599.99
+      },
+      {
+        "id": 5,
+        "nombre": "Altavoces Bluetooth FusionSound",
+        "descripcion": "Altavoces Bluetooth con sonido de alta fidelidad y diseño elegante.",
+        "descuento": 0.1,
+        "imagen": "altavoces_fusion.jpg",
+        "valor": 79.99
+      },
+      {
+        "id": 6,
+        "nombre": "Webcam HD ProStream",
+        "descripcion": "Webcam de alta definición para transmisiones y videoconferencias.",
+        "descuento": 0.12,
+        "imagen": "webcam_prostream.jpg",
+        "valor": 69.99
+      },
+      {
+        "id": 7,
+        "nombre": "Pad de Carga Inalámbrica PowerPad",
+        "descripcion": "Pad de carga inalámbrica para dispositivos compatibles.",
+        "descuento": 0.08,
+        "imagen": "pad_powerpad.jpg",
+        "valor": 29.99
+      },
+      {
+        "id": 8,
+        "nombre": "Teclado y Ratón Inalámbricos ComboPro",
+        "descripcion": "Combo de teclado y ratón inalámbricos para mayor comodidad.",
+        "descuento": 0.15,
+        "imagen": "combo_pro.jpg",
+        "valor": 99.99
+      },
+      {
+        "id": 9,
+        "nombre": "Impresora Multifunción EcoPrint",
+        "descripcion": "Impresora multifunción ecológica con funciones de escaneo y copiado.",
+        "descuento": 0.1,
+        "imagen": "impresora_ecoprint.jpg",
+        "valor": 149.99
+      },
+      {
+        "id": 10,
+        "nombre": "Hub USB SuperSpeed 10 puertos",
+        "descripcion": "Hub USB de alta velocidad con 10 puertos para conectar múltiples dispositivos.",
+        "descuento": 0.05,
+        "imagen": "hub_superspeed.jpg",
+        "valor": 39.99
+      },
+      {
+        "id": 11,
+        "nombre": "Ratón Vertical ErgoGrip",
+        "descripcion": "Ratón ergonómico vertical para reducir la fatiga y el dolor en la muñeca.",
+        "descuento": 0.1,
+        "imagen": "raton_ergogrip.jpg",
+        "valor": 59.99
+      },
+      {
+        "id": 12,
+        "nombre": "Teclado Silencioso WhisperType",
+        "descripcion": "Teclado silencioso con teclas de bajo perfil para un escritura cómoda.",
+        "descuento": 0.08,
+        "imagen": "teclado_whisper.jpg",
+        "valor": 79.99
+      },
+      {
+        "id": 13,
+        "nombre": "Mousepad Gamer SpeedTrack",
+        "descripcion": "Mousepad optimizado para juegos con superficie de deslizamiento suave.",
+        "descuento": 0.12,
+        "imagen": "mousepad_speedtrack.jpg",
+        "valor": 19.99
+      },
+      {
+        "id": 14,
+        "nombre": "Cámara de Seguridad VigilanceCam",
+        "descripcion": "Cámara de seguridad con visión nocturna y detección de movimiento.",
+        "descuento": 0.15,
+        "imagen": "camara_vigilance.jpg",
+        "valor": 129.99
+      },
+      {
+        "id": 15,
+        "nombre": "Auriculares con Micrófono ProVoice",
+        "descripcion": "Auriculares con micrófono de alta calidad para comunicaciones claras.",
+        "descuento": 0.1,
+        "imagen": "auriculares_provoice.jpg",
+        "valor": 89.99
+      },
+      {
+        "id": 21,
+        "nombre": "PC Gamer AlphaX",
+        "descripcion": "Computadora gaming de alto rendimiento con tarjeta gráfica dedicada y procesador potente.",
+        "descuento": 0.1,
+        "imagen": "pc_gamer_alphax.jpg",
+        "valor": 1499.99
+      },
+      {
+        "id": 22,
+        "nombre": "Laptop Ultrabook EliteBook",
+        "descripcion": "Laptop ultrabook empresarial con diseño delgado, ligero y seguridad avanzada.",
+        "descuento": 0.00,
+        "imagen": "laptop_elitebook.jpg",
+        "valor": 1299.99
+      },
+      {
+        "id": 23,
+        "nombre": "Desktop PowerPro",
+        "descripcion": "Desktop de alta potencia para tareas exigentes y edición de multimedia.",
+        "descuento": 0.15,
+        "imagen": "desktop_powerpro.jpg",
+        "valor": 999.99
+      },
+      {
+        "id": 24,
+        "nombre": "Laptop Convertible FlexBook",
+        "descripcion": "Laptop convertible con pantalla táctil y diseño versátil para diferentes modos de uso.",
+        "descuento": 0.2,
+        "imagen": "laptop_flexbook.jpg",
+        "valor": 899.99
+      },
+      {
+        "id": 25,
+        "nombre": "PC Todo en Uno Visionary",
+        "descripcion": "PC todo en uno con pantalla de alta resolución y rendimiento eficiente.",
+        "descuento": 0.1,
+        "imagen": "pc_visionary.jpg",
+        "valor": 1199.99
+      },
+      {
+        "id": 26,
+        "nombre": "Mini PC CompactMax",
+        "descripcion": "Mini PC compacto y potente, ideal para espacios reducidos.",
+        "descuento": 0.12,
+        "imagen": "mini_pc_compactmax.jpg",
+        "valor": 599.99
+      },
+      {
+        "id": 27,
+        "nombre": "Laptop EduBook",
+        "descripcion": "Laptop educacional con software educativo preinstalado y durabilidad.",
+        "descuento": 0.00,
+        "imagen": "laptop_edubook.jpg",
+        "valor": 499.99
+      },
+      {
+        "id": 28,
+        "nombre": "Desktop Multimedia Master",
+        "descripcion": "Desktop diseñado para entretenimiento multimedia con gráficos avanzados.",
+        "descuento": 0.15,
+        "imagen": "desktop_multimedia_master.jpg",
+        "valor": 799.99
+      },
+      {
+        "id": 29,
+        "nombre": "Laptop ProBook Business",
+        "descripcion": "Laptop empresarial con seguridad mejorada y rendimiento confiable.",
+        "descuento": 0.1,
+        "imagen": "laptop_probook.jpg",
+        "valor": 1099.99
+      },
+      {
+        "id": 30,
+        "nombre": "Desktop Gamer XtremeForce",
+        "descripcion": "Desktop gaming de alta gama con iluminación LED y refrigeración avanzada.",
+        "descuento": 0.05,
+        "imagen": "desktop_xtremeforce.jpg",
+        "valor": 1499.99
+      },
+      {
+        "id": 31,
+        "nombre": "Laptop ArtistCanvas",
+        "descripcion": "Laptop diseñada para artistas y diseñadores con pantalla táctil y lápiz digital.",
+        "descuento": 0.1,
+        "imagen": "laptop_artistcanvas.jpg",
+        "valor": 1299.99
+      },
+      {
+        "id": 32,
+        "nombre": "Mini PC EcoFriendly",
+        "descripcion": "Mini PC ecológico con eficiencia energética y diseño sostenible.",
+        "descuento": 0.00,
+        "imagen": "mini_pc_ecofriendly.jpg",
+        "valor": 699.99
+      },
+      {
+        "id": 33,
+        "nombre": "Laptop TravelMate",
+        "descripcion": "Laptop ultraportátil diseñada para viajes y movilidad empresarial.",
+        "descuento": 0.12,
+        "imagen": "laptop_travelmate.jpg",
+        "valor": 899.99
+      },
+      {
+        "id": 34,
+        "nombre": "Desktop HomeOffice Master",
+        "descripcion": "Desktop diseñada para productividad en el hogar con conectividad avanzada.",
+        "descuento": 0.15,
+        "imagen": "desktop_homeoffice_master.jpg",
+        "valor": 799.99
+      },
+      {
+        "id": 35,
+        "nombre": "Laptop Essential",
+        "descripcion": "Laptop asequible con rendimiento básico para tareas diarias.",
+        "descuento": 0.1,
+        "imagen": "laptop_essential.jpg",
+        "valor": 499.99
+      }
+    ]
+}
+  

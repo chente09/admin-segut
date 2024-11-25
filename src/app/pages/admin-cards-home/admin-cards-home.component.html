@@ -1,0 +1,73 @@
+<div class="admin-panel-container">
+    <!-- Formulario para crear tarjeta -->
+    <div class="form-container">
+        <h2 class="form-title">Crear Tarjeta</h2>
+        <form [formGroup]="cardForm" (ngSubmit)="submitForm()" class="admin-form">
+            <nz-form-item>
+                <nz-form-label [nzRequired]="true">Título</nz-form-label>
+                <nz-form-control>
+                    <input nz-input formControlName="title" placeholder="Ingresa el título" />
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-label [nzRequired]="true">Descripción</nz-form-label>
+                <nz-form-control>
+                    <textarea nz-input formControlName="description" placeholder="Ingresa la descripción"></textarea>
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-label [nzRequired]="true">Imagen</nz-form-label>
+                <nz-form-control>
+                    <input type="file" #fileInput (change)="onFileChange($event)" />
+                </nz-form-control>
+            </nz-form-item>
+
+            <div class="button-container">
+                <button nz-button nzType="primary" [disabled]="isSubmitting || !cardForm.valid">
+                    {{ editingCardId ? 'Actualizar' : 'Guardar' }}
+                </button>
+                <button *ngIf="editingCardId" nz-button nzType="default" (click)="cancelEdit()">
+                    Cancelar
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Lista de tarjetas -->
+    <div *ngIf="cards.length > 0" class="cards-list-container">
+        <h3 class="section-title">Tarjetas Creadas</h3>
+        <nz-row [nzGutter]="16">
+            <nz-col *ngFor="let card of cards" [nzSpan]="6" class="card-column">
+                <nz-card [nzTitle]="card.title" class="custom-card" [nzBordered]="true">
+                    <img [src]="card.imageUrl" alt="Imagen de la tarjeta" class="card-image" />
+                    <p class="card-description">{{ card.description }}</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <!-- Botón de Editar -->
+                        <button 
+                            type="button" 
+                            class="btn btn-outline-info btn-sm d-flex align-items-center" 
+                            (click)="startEdit(card)">
+                            <i class="bi bi-pencil me-2"></i> Editar
+                        </button>
+                        
+                        <!-- Botón de Eliminar -->
+                        <button 
+                            type="button" 
+                            class="btn btn-outline-danger btn-sm d-flex align-items-center" 
+                            (click)="deleteCard(card.id!)">
+                            <i class="bi bi-trash me-2"></i> Eliminar
+                        </button>
+                    </div>                    
+                </nz-card>
+            </nz-col>
+        </nz-row>
+    </div>
+
+    <div *ngIf="cards.length === 0" class="no-cards-message">
+        <p>No hay tarjetas creadas.</p>
+    </div>
+</div>
