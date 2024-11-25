@@ -77,18 +77,22 @@ export class RegistersService {
   }
 
   async createRegister(loginInfo: LoginInfo, { email, nickname, photoURL, phoneNumber, role }: Register): Promise<any> {
-    let userCredential: UserCredential = await this.usersService.register(loginInfo)
-      .then((response) => {
-        return response;
-      })
-      .catch(error => {
-        console.log(error);
-        return error;
-      });
+    try {
+      console.log('Iniciando registro...');
+      let userCredential: UserCredential = await this.usersService.register(loginInfo);
+      console.log('Usuario autenticado:', userCredential.user.uid);
+      
       const uid = userCredential.user.uid;
-    this.currentRegister = { email, uid, nickname, photoURL, phoneNumber, role };
-    const registersRef = collection(this.firestore, 'registers');
-    return addDoc(registersRef, { uid, email, nickname, photoURL, phoneNumber, role });
+      this.currentRegister = { email, uid, nickname, photoURL, phoneNumber, role };
+      
+      const registersRef = collection(this.firestore, 'registers');
+      const response = await addDoc(registersRef, { uid, email, nickname, photoURL, phoneNumber, role });
+      console.log('Documento creado en Firestore:', response.id);
+      return response;
+    } catch (error) {
+      console.error('Error al registrar usuario:', error);
+      throw error;
+    }
   }
 
   async createRegisterWithGoogle(): Promise<any> {

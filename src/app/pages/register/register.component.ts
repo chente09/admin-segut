@@ -44,14 +44,14 @@ export class RegisterComponent {
     if (this.form.invalid) return;
     const email = this.form.value.email;
     const password = this.form.value.password;
-    this.registersService.createRegister({email, password},this.form.value)
-      .then((response)=>{
-        console.log(response);
-      })
-      .catch((error)=>{
-        console.log(error);
-      })
-      this.router.navigate(['/admin']);
+    this.registersService.createRegister({ email, password }, this.form.value)
+  .then((response) => {
+    console.log('Registro exitoso:', response);
+    this.router.navigate(['/admin']);
+  })
+  .catch((error) => {
+    console.error('Error al registrar:', error);
+  });
   }
 
   onClickRegisterWithGoogle(): void {
