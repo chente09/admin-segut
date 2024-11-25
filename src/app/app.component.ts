@@ -16,6 +16,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import {CloudinaryModule} from '@cloudinary/ng';
 import { NzConfigService } from 'ng-zorro-antd/core/config';
+import { Router } from '@angular/router';
 
 
 
@@ -23,7 +24,7 @@ import { NzConfigService } from 'ng-zorro-antd/core/config';
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, 
+    CommonModule,
     NzBreadCrumbModule, 
     RouterOutlet, 
     NzIconModule, 
@@ -46,6 +47,7 @@ export class AppComponent {
   title = 'app-ngzorro';
 
   constructor(
+    private router: Router,
     private usersService: UsersService, 
     public registersService: RegistersService,
     private nzConfigService: NzConfigService
@@ -60,5 +62,6 @@ export class AppComponent {
   logout(): void {
     this.registersService.currentRegister = undefined;
     this.usersService.logout();
+    this.router.navigate(['/admin']);
   }
 }
