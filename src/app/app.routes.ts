@@ -10,6 +10,7 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { AdminCardsHomeComponent } from './pages/admin-cards-home/admin-cards-home.component';
 import { inject } from '@angular/core';
 import { RegistersService } from './services/registers/registers.service';
+import { FormulariosComponent } from './pages/formularios/formularios.component';
 
 // Redirigir al login si el usuario no está autenticado
 export const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['/login']);
@@ -54,6 +55,11 @@ export const routes: Routes = [
   },
   {
     path: 'admin-cards-home', component: AdminCardsHomeComponent, 
+    ...canActivate(() => redirectUnauthorizedTo(['/login'])),
+  },
+  {
+    path: 'formularios',
+    component: FormulariosComponent,
     ...canActivate(() => redirectUnauthorizedTo(['/login'])),
   },
   {

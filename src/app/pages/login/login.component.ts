@@ -6,7 +6,6 @@ import {NzButtonModule} from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 import { RegistersService } from '../../services/registers/registers.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -19,8 +18,7 @@ import { ActivatedRoute, Router } from '@angular/router';
     NzInputModule, 
     NzButtonModule, 
     ReactiveFormsModule, 
-    NzCheckboxModule, 
-    RouterLink, 
+    NzCheckboxModule,
     NzIconModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'

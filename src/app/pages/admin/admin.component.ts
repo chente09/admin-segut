@@ -64,4 +64,8 @@ export class AdminComponent {
   goToCards(): void {
     this.router.navigate(['/admin-cards-home']);
   }
+
+  goToFormularios(): void {
+    this.router.navigate(['/formularios']);
+  }
 }

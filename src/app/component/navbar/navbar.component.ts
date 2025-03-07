@@ -23,14 +23,14 @@ export class NavbarComponent implements OnInit {
       icon: 'bi-people-fill' // Ícono de Bootstrap Icons
     },
     {
-      label: 'Rutas',
-      route: '/admin-paths',
-      icon: 'bi-map-fill'
-    },
-    {
       label: 'Imágenes',
       route: '/admin-images',
       icon: 'bi-image-fill'
+    },
+    {
+      label: 'Todos',
+      route: '/admin',
+      icon: 'bi-map-fill'
     }
   ];
 
